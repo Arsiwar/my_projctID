@@ -1,23 +1,26 @@
-name: React CI Pipeline //hedha esmou l workflow el Pipeline
-on: //ya3ni 3la chnoua bech ykhdem el workflow
-push: //ya3ni 3ala kol push fel branch main
-branches: [main]
+name: React CI Pipeline # hedha esmou l workflow el Pipeline
 
-jobs: //ya3ni chnoua bech ykhdem el workflow
-  build: //esm el job
-    runs-on: ubuntu-latest //ya3ni github action bech ykhdem 3la ubuntu
+on: # ya3ni 3la chnoua bech ykhdem el workflow
+  push: # ya3ni 3ala kol push fel branch main
+    branches:
+      - main
 
-    steps: //ya3ni chnoua bech ykhdem el job
+jobs: # ya3ni chnoua bech ykhdem el workflow
+  build: # esm el job
+    runs-on: ubuntu-latest # ya3ni github action bech ykhdem 3la ubuntu
+
+    steps: # ya3ni chnoua bech ykhdem el job
+
       - name: Checkout code
-        uses: actions/checkout@v3 //utiliser l'action checkout pour récupérer le code source actions heya bib mte3 github
+        uses: actions/checkout@v3 # ya3ni ya3mel download lel code mte3ek men GitHub
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: 18 # version mte3 Node.js
 
       - name: Install dependencies
-        run: npm install
+        run: npm install # yinstalli les packages mte3 projet
 
       - name: Run tests
-        run: npm test -- --watchAll=false
+        run: npm test -- --watchAll=false # yrunni tests automatique (si mawjoudin)
