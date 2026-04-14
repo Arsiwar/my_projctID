@@ -1,0 +1,23 @@
+name: React CI Pipeline //hedha esmou l workflow el Pipeline
+on: //ya3ni 3la chnoua bech ykhdem el workflow
+  push: //ya3ni 3ala kol push fel branch main
+    branches: [main]
+
+jobs: //ya3ni chnoua bech ykhdem el workflow
+  build: //esm el job
+    runs-on: ubuntu-latest //ya3ni github action bech ykhdem 3la ubuntu
+
+    steps: //ya3ni chnoua bech ykhdem el job
+      - name: Checkout code
+        uses: actions/checkout@v3 //utiliser l'action checkout pour récupérer le code source actions heya bib mte3 github
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test -- --watchAll=false
