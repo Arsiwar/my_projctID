@@ -1,7 +1,7 @@
 name: React CI Pipeline //hedha esmou l workflow el Pipeline
 on: //ya3ni 3la chnoua bech ykhdem el workflow
 push: //ya3ni 3ala kol push fel branch main
-    branches: [main]
+branches: [main]
 
 jobs: //ya3ni chnoua bech ykhdem el workflow
   build: //esm el job
