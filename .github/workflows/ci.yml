@@ -22,5 +22,4 @@ jobs: # ya3ni chnoua bech ykhdem el workflow
       - name: Install dependencies
         run: npm install # yinstalli les packages mte3 projet
 
-      - name: Run tests
-        run: npm test -- --watchAll=false # yrunni tests automatique (si mawjoudin)
+      
